@@ -8,7 +8,7 @@ public class lastname {
         System.out.println("input your full name");
         String name = input.nextLine();
         for (int i = 0; i < name.length(); i++){
-            if (name.charAt(i).equals(" ") && i != 0){
+            if (name.charAt(i).equals(" ")) && i != 0){
                 split = i;
             }
 
