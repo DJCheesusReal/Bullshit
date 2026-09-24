@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class concat {
-
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("input your first name");
         String name = input.nextLine();
@@ -11,8 +10,5 @@ public class concat {
         String fullname = name + " " + last;
         System.out.println("Hello " + fullname);
         System.out.println(fullname.length());
-
-
     }
-
 }

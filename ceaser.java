@@ -1,25 +1,24 @@
-    import java.util.Scanner;
+import java.util.Scanner;
 
-    public class ceaser {
+public class ceaser {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("input a saying");
+        String saying = input.nextLine();
+        System.out.println("input shift");
+        int shift = input.nextInt();
+        shift = ((shift % 26) + 26) % 26;
 
-        public static void main(String[] args) throws Exception {
-            Scanner input = new Scanner(System.in);
-            System.out.println("input a saying");
-            String saying = input.nextLine();
-            System.out.println("input shift");
-            int shift = input.nextInt();
-            String finalString = "";
-            for (char c : saying.toLowerCase().toCharArray()) {
-               int ascii = (int) c;
-               ascii = ascii + shift;
-               if (ascii > 122){
-                   ascii = ascii - 26;
-               }
-               finalString = finalString + (char) ascii;
+        String finalString = "";
+        for (char c : saying.toCharArray()) {
+            if (c >= 'a' && c <= 'z') {
+                finalString += (char) ('a' + (c - 'a' + shift) % 26);
+            } else if (c >= 'A' && c <= 'Z') {
+                finalString += (char) ('A' + (c - 'A' + shift) % 26);
+            } else {
+                finalString += c;
             }
-            System.out.println(finalString);
-
-
         }
-
+        System.out.println(finalString);
     }
+}

@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
 public class lastname {
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("input your full name");
         String name = input.nextLine().trim();
 
+        if (name.isEmpty()) {
+            System.out.println("Input cannot be empty");
+            return;
+        }
+
         int split = -1;
         for (int i = 0; i < name.length(); i++) {
-            if (name.charAt(i) == ' ' && i != 0) {
+            if (name.charAt(i) == ' ') {
                 split = i;
             }
         }
 
         if (split == -1) {
             System.out.println("Hello " + name);
-            return;
+        } else {
+            String last = name.substring(split + 1).trim();
+            System.out.println("Hello " + last);
         }
-        
-        String first = name.substring(0, split);
-        String last = name.substring(split + 1);
-        System.out.println("Hello " + first + " " + last);
-        System.out.println("Your last name is " + last);
-        input.close();
     }
 }
